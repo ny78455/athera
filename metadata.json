@@ -1,0 +1,8 @@
+{
+  "name": "Aether Analytics",
+  "description": "Real-time SaaS analytics platform with multi-tenant data ingestion, customizable dashboards, and live metric tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
