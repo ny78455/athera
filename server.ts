@@ -36,8 +36,8 @@ const _dirname = typeof __dirname !== 'undefined' ? __dirname : dirname(_filenam
 //
 // -- DISABLE RLS FOR DEMO (OR ADD POLICIES):
 // ALTER TABLE events DISABLE ROW LEVEL SECURITY;
-const supabaseUrl = "https://jqplcafqksyysdbkwtru.supabase.co";
-const supabaseKey = "sb_publishable_jKRfCrH-PSmo99auN5ciYw_0LdI0UOJ";
+const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
   console.error("CRITICAL: Missing Supabase environment variables (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY).");
@@ -59,7 +59,7 @@ const supabase = createClient(
 
 async function startServer() {
   const app = express();
-  const PORT = 3001;
+  const PORT = process.env.PORT || 3001;
 
   console.log("Starting Aether server with Supabase...");
 
